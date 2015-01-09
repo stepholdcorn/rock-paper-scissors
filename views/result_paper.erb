@@ -1,1 +1,9 @@
 You chose PAPER
+
+<% if @result == 'Win' %>
+	The computer chose rock. You win! Yay!
+<% elsif @result == 'Lose' %>
+	The computer chose scissors. You lose. Boo.
+<% else %>
+	The computer chose paper. You draw.
+<% end %>
