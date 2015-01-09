@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require_relative 'computer'
 require_relative 'rock'
+require_relative 'paper'
+require_relative 'scissors'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -31,10 +33,16 @@ set :views, Proc.new { File.join(root, '..', "views") }
   end
 
   get '/result_paper' do
+    @paper = Paper.new
+    @computer = Computer.new
+    @result = @paper.play(@computer)
   	erb :result_paper
   end
 
   get '/result_scissors' do
+    @scissors = Scissors.new
+    @computer = Computer.new
+    @result = @scissors.play(@computer)
   	erb :result_scissors
   end
 
