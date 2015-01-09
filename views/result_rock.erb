@@ -1,2 +1,10 @@
-The computer chose scissors. You win! Yay!
+You chose ROCK
+
+<% if @result == 'Win' %>
+	The computer chose scissors. You win! Yay!
+<% elsif @result == 'Lose' %>
+	The computer chose paper. You lose. Boo.
+<% else %>
+	The computer chose rock. You draw.
+<% end %>
 

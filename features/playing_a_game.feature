@@ -3,17 +3,17 @@ Feature: Playing the game
 	As a nostalgic player
 	I want to choose an option
 
-Scenario: Rock vs Scissors
+Scenario: Rock
 	Given I am on the homepage
 	When I follow "Rock"
-	Then I should see "The computer chose scissors. You win! Yay!"
+	Then I should see "You chose ROCK"
 
-Scenario: Paper vs Rock
+Scenario: Paper
 	Given I am on the homepage
 	When I follow "Paper"
-	Then I should see "The computer chose rock. You win! Yay!"
+	Then I should see "You chose PAPER"
 
-Scenario: Scissors vs Paper
+Scenario: Scissors
 	Given I am on the homepage
 	When I follow "Scissors"
-	Then I should see "The computer chose paper. You win! Yay!"
+	Then I should see "You chose SCISSORS"
