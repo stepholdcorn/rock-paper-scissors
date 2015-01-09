@@ -3,8 +3,10 @@ class Rock
 	def play(computer)
 		if computer.choice == 'scissors'
 			'Win'
-		else
+		elsif computer.choice == 'paper'
 			'Lose'
+		else
+			'Draw'
 		end
 	end
 
