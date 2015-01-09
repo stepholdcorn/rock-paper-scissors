@@ -7,10 +7,18 @@ Feature: Starting the game
 		Given I am on the homepage
 		When I fill in "name" with "Steph"
 		When I press "Submit"
-		Then I should see "Welcome to the game Steph"
+		Then I should see "Select your weapon Steph"
 
 	Scenario: Blank name error
 		Given I am on the homepage
 		When I fill in "name" with ""
 		When I press "Submit"
 		Then I should see "Please enter a name"
+
+	Scenario: Play again
+		Given I am on the homepage
+		When I fill in "name" with "Steph"
+		When I press "Submit"
+		When I follow "Rock"
+		When I follow "Retry"
+		Then I should see "Select your weapon Steph"

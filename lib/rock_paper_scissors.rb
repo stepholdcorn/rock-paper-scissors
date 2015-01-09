@@ -7,6 +7,7 @@ require_relative 'scissors'
 class RockPaperScissors < Sinatra::Base
 
 set :views, Proc.new { File.join(root, '..', "views") }
+enable :sessions
 
   get '/' do
     erb :index
@@ -17,15 +18,18 @@ set :views, Proc.new { File.join(root, '..', "views") }
     if @name == ""
       erb :name_error
     else
+      session[:name] = @name
       erb :selection
     end
   end
 
   get '/selection' do
+    @name = session[:name] 
     erb :selection
   end
 
   get '/result_rock' do
+    @name = session[:name]
   	@rock = Rock.new
   	@computer = Computer.new
   	@result = @rock.play(@computer)
@@ -33,6 +37,7 @@ set :views, Proc.new { File.join(root, '..', "views") }
   end
 
   get '/result_paper' do
+    @name = session[:name]
     @paper = Paper.new
     @computer = Computer.new
     @result = @paper.play(@computer)
@@ -40,6 +45,7 @@ set :views, Proc.new { File.join(root, '..', "views") }
   end
 
   get '/result_scissors' do
+    @name = session[:name]
     @scissors = Scissors.new
     @computer = Computer.new
     @result = @scissors.play(@computer)
