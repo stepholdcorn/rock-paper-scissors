@@ -7,7 +7,7 @@ Feature: Starting the game
 		Given I am on the homepage
 		When I fill in "name" with "Steph"
 		When I press "Submit"
-		Then I should see "Select your weapon Steph"
+		Then I should see "Make your choice Steph"
 
 	Scenario: Blank name error
 		Given I am on the homepage
@@ -21,4 +21,4 @@ Feature: Starting the game
 		When I press "Submit"
 		When I follow "Rock"
 		When I follow "Retry"
-		Then I should see "Select your weapon Steph"
+		Then I should see "Make your choice Steph"

@@ -1,0 +1,35 @@
+body {
+
+	background-color: #191919;
+}
+
+.container {
+
+	background-color: #191919;
+	font-family: 'Montserrat', sans-serif;
+
+}
+
+.jumbotron {
+
+	background-color: #DFE2DB;
+}
+
+h1 {
+
+	color: #191919;
+
+}
+
+label {
+
+	font-size: 20px;
+	color: #191919;
+}
+
+.btn {
+
+	background-color: #FFF056;
+	border: none;
+	color: #191919;
+} 
