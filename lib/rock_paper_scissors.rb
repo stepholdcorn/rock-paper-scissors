@@ -10,6 +10,15 @@ set :views, Proc.new { File.join(root, '..', "views") }
     erb :index
   end
 
+  post '/' do
+    @name = params[:name]
+    erb :selection
+  end
+
+  get '/selection' do
+    erb :selection
+  end
+
   get '/result_rock' do
   	@rock = Rock.new
   	@computer = Computer.new
