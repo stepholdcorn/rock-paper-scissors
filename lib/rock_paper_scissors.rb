@@ -12,7 +12,11 @@ set :views, Proc.new { File.join(root, '..', "views") }
 
   post '/' do
     @name = params[:name]
-    erb :selection
+    if @name == ""
+      erb :name_error
+    else
+      erb :selection
+    end
   end
 
   get '/selection' do
