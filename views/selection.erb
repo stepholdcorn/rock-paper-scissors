@@ -1,6 +1,21 @@
-Make your choice <%= @name %>
+<h2>Make your choice <%= @name %></h2>
 
-<a href = '/result_rock'>Rock</a>
-<a href = '/result_paper'>Paper</a>
-<a href = '/result_scissors'>Scissors</a>
+<div class="row">
+  <div class="col-xs-6 col-md--3">
+    <a href="/result_rock" class="thumbnail">
+      <img src="/images/rock.jpg" alt="Rock">
+    </a>
+  </div>
+    <div class="col-xs-6 col-md--3">
+    <a href="/result_paper" class="thumbnail">
+      <img src="/images/paper.jpg" alt="Paper">
+    </a>
+  </div>
+    <div class="col-xs-6 col-md--3">
+    <a href="/result_scissors" class="thumbnail">
+      <img src="/images/scissors.jpg" alt="Scissors">
+    </a>
+  </div>
+ </div>
+
 
