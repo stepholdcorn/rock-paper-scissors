@@ -39,3 +39,9 @@ label {
 	border: none;
 	color: #191919;
 } 
+
+.row {
+
+	text-align: center;
+	background-color: #191919;
+}
