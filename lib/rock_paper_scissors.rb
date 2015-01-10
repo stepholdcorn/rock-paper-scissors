@@ -23,6 +23,14 @@ enable :sessions
     end
   end
 
+  get '/index' do
+    erb :index
+  end
+
+  get '/name_error' do
+    erb :name_error
+  end
+
   get '/selection' do
     @name = session[:name] 
     erb :selection

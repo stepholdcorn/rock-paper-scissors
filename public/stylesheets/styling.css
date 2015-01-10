@@ -17,9 +17,15 @@ body {
 	color: #191919
 }
 
+.form-group {
+
+	text-align: center;
+}
+
 h1 {
 
-	color: #191919;
+	text-align: center;
+	color: #CF0000;
 
 }
 

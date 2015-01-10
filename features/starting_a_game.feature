@@ -15,6 +15,13 @@ Feature: Starting the game
 		When I press "Submit"
 		Then I should see "Please enter a name"
 
+	Scenario: Error link back to homepage
+		Given I am on the homepage
+		When I fill in "name" with ""
+		When I press "Submit"
+		When I follow "Home"
+		Then I should see "Rock Paper Scissors"
+
 	Scenario: Play again
 		Given I am on the homepage
 		When I fill in "name" with "Steph"
