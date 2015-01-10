@@ -1,12 +1,24 @@
-You chose ROCK
+<h2>You chose ROCK</h2>
 
+<div class="row">
 <% if @result == 'Win' %>
-	The computer chose scissors. You win! Yay!
+	<img src="/images/rock.png" alt="Rock">
+	VS
+	<img src="/images/scissors.png" alt="Scissors">
+	<h2>You win!</h2>
 <% elsif @result == 'Lose' %>
-	The computer chose paper. You lose. Boo.
+	<img src="/images/rock.png" alt="Rock">
+	VS
+	<img src="/images/paper.png" alt="Paper">
+	<h2>You lose</h2>
 <% else %>
-	The computer chose rock. You draw.
+	<img src="/images/rock.png" alt="Rock">
+	VS
+	<img src="/images/rock.png" alt="Rock">
+	<h2>You draw</h2>
 <% end %>
-
-<a href = '/selection'>Retry</a>
+</div>
+<div class="row">
+	<a href = '/selection'><button class = 'btn btn-primary'>Retry</button></a>
+</div>
 
