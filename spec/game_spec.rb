@@ -21,4 +21,18 @@ let(:player2) {double :player2}
 		expect(game.player_2).to eq(player2)
 	end
 
+	it 'should know when it is ready' do
+		game.add_player(player1)
+		game.add_player(player2)
+		expect(game).to be_ready
+	end
+
+	it 'should know when both players have made a choice' do
+		game.add_player(player1)
+		game.add_player(player2)
+		allow(player1).to receive(:choice) { 'Rock' }
+		allow(player2).to receive(:choice) { 'Paper' }
+		expect(game).to have_both_choices
+	end
+
 end

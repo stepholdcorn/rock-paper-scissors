@@ -14,4 +14,12 @@ class Game
 		end
 	end
 
+	def ready?
+		true if player_1 != nil && player_2 != nil
+	end
+
+	def has_both_choices?
+		true if player_1.choice != nil && player_2.choice != nil
+	end
+
 end
