@@ -16,6 +16,9 @@ module NavigationHelpers
     when /the selection page/
       '/selection'
 
+    when /the selection_multi page/
+      '/selection_multi'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

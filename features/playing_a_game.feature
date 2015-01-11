@@ -1,6 +1,6 @@
-Feature: Playing the game
+Feature: Playing the single player game
 	In order to play Rock Paper Scissors
-	As a nostalgic player
+	As a single player
 	I want to choose an option
 
 	Scenario: Rock

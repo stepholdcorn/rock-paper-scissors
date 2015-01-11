@@ -43,6 +43,11 @@ enable :sessions
     erb :selection
   end
 
+  get '/selection_multi' do
+    @name = session[:name]
+    erb :selection_multi
+  end
+
   get '/result_rock' do
     @name = session[:name]
   	@rock = Rock.new
@@ -66,6 +71,25 @@ enable :sessions
     @result = @scissors.play(@computer)
   	erb :result_scissors
   end
+
+  get '/result_rock_multi' do
+    @name = session[:name]
+    @rock = Rock.new
+    erb :result_rock_multi
+  end
+
+  get '/result_paper_multi' do
+    @name = session[:name]
+    @rock = Paper.new
+    erb :result_paper_multi
+  end
+
+  get '/result_scissors_multi' do
+    @name = session[:name]
+    @rock = Scissors.new
+    erb :result_scissors_multi
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
