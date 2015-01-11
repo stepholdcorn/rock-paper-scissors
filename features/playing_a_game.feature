@@ -16,7 +16,6 @@ Feature: Playing the single player game
 		When I fill in "name" with "Steph"
 		When I press "Submit"
 		When I follow "Single"
-		Given I am on the selection page
 		When I follow "Paper"
 		Then I should see "You chose PAPER"
 
@@ -25,6 +24,5 @@ Feature: Playing the single player game
 		When I fill in "name" with "Steph"
 		When I press "Submit"
 		When I follow "Single"
-		Given I am on the selection page
 		When I follow "Scissors"
 		Then I should see "You chose SCISSORS"

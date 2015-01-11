@@ -23,10 +23,17 @@ game = Game.new
     name = params[:name]
     if name == ""
       erb :name_error
-    else
+    elsif @player == nil
       @player = Player.new
       @player.name = name
       session[:player] = @player
+      erb :game_mode
+    else
+      @player2 = Player.new
+      @player2.name = name
+      session[:player2] = @player2
+      game.add_player(@player)
+      game.add_player(@player2)
       erb :game_mode
     end
   end
@@ -81,18 +88,19 @@ game = Game.new
   get '/result_rock_multi' do
     @player = session[:player]
     @rock = Rock.new
+    @result_page = game.has_both_choices?
     erb :result_rock_multi
   end
 
   get '/result_paper_multi' do
     @player = session[:player]
-    @rock = Paper.new
+    @paper = Paper.new
     erb :result_paper_multi
   end
 
   get '/result_scissors_multi' do
     @player = session[:player]
-    @rock = Scissors.new
+    @scissors = Scissors.new
     erb :result_scissors_multi
   end
 

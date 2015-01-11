@@ -33,7 +33,7 @@ Feature: Starting the game
 		Given I am on the homepage
 		When I fill in "name" with "Steph"
 		When I press "Submit"
-		When I follow "Multi Player"
+		When I follow "Multi"
 		Then I should see "Make your choice Steph"
 
 	Scenario: Play again single
