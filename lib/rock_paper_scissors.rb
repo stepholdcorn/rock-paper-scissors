@@ -7,6 +7,8 @@ require_relative 'scissors'
 class RockPaperScissors < Sinatra::Base
 
 set :views, Proc.new { File.join(root, '..', "views") }
+set :public_dir, Proc.new{File.join(root, '..', "public")}
+set :public_folder, 'public'
 enable :sessions
 
   get '/' do
@@ -19,8 +21,13 @@ enable :sessions
       erb :name_error
     else
       session[:name] = @name
-      erb :selection
+      erb :game_mode
     end
+  end
+
+  get '/game_mode' do
+    @name = session[:name] 
+    erb :game_mode
   end
 
   get '/index' do
