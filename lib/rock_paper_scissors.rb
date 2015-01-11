@@ -3,6 +3,8 @@ require_relative 'computer'
 require_relative 'rock'
 require_relative 'paper'
 require_relative 'scissors'
+require_relative 'game'
+require_relative 'player'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -11,22 +13,26 @@ set :public_dir, Proc.new{File.join(root, '..', "public")}
 set :public_folder, 'public'
 enable :sessions
 
+game = Game.new
+
   get '/' do
     erb :index
   end
 
   post '/' do
-    @name = params[:name]
-    if @name == ""
+    name = params[:name]
+    if name == ""
       erb :name_error
     else
-      session[:name] = @name
+      @player = Player.new
+      @player.name = name
+      session[:player] = @player
       erb :game_mode
     end
   end
 
   get '/game_mode' do
-    @name = session[:name] 
+    @player = session[:player] 
     erb :game_mode
   end
 
@@ -39,17 +45,17 @@ enable :sessions
   end
 
   get '/selection' do
-    @name = session[:name] 
+    @player = session[:player] 
     erb :selection
   end
 
   get '/selection_multi' do
-    @name = session[:name]
+    @player = session[:player]
     erb :selection_multi
   end
 
   get '/result_rock' do
-    @name = session[:name]
+    @player = session[:player]
   	@rock = Rock.new
   	@computer = Computer.new
   	@result = @rock.play(@computer)
@@ -57,7 +63,7 @@ enable :sessions
   end
 
   get '/result_paper' do
-    @name = session[:name]
+    @player = session[:player]
     @paper = Paper.new
     @computer = Computer.new
     @result = @paper.play(@computer)
@@ -65,7 +71,7 @@ enable :sessions
   end
 
   get '/result_scissors' do
-    @name = session[:name]
+    @player = session[:player]
     @scissors = Scissors.new
     @computer = Computer.new
     @result = @scissors.play(@computer)
@@ -73,19 +79,19 @@ enable :sessions
   end
 
   get '/result_rock_multi' do
-    @name = session[:name]
+    @player = session[:player]
     @rock = Rock.new
     erb :result_rock_multi
   end
 
   get '/result_paper_multi' do
-    @name = session[:name]
+    @player = session[:player]
     @rock = Paper.new
     erb :result_paper_multi
   end
 
   get '/result_scissors_multi' do
-    @name = session[:name]
+    @player = session[:player]
     @rock = Scissors.new
     erb :result_scissors_multi
   end
