@@ -16,6 +16,28 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
+Given(/^I have signed up for single player$/) do
+  step 'I have entered my name'
+  step 'I follow "Single"'
+end
+
+Given(/^I have signed up for multiplayer$/) do
+  step 'I have entered my name'
+  step 'I follow "Multi"'
+end
+
+Given(/^I have entered my name$/) do
+  step 'I am on the homepage'
+  step 'I fill in "name" with "Steph"'
+  step 'I press "Submit"'
+end
+
+Given(/^I have entered an invalid name$/) do
+  step 'I am on the homepage'
+  step 'I fill in "name" with ""'
+  step 'I press "Submit"'
+end
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
