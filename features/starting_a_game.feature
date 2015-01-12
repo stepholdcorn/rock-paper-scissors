@@ -20,14 +20,8 @@ Feature: Starting the game
 		Given I have signed up for single player
 		Then I should see "Make your choice Steph"
 
-	Scenario: Choosing the multiplayer game mode 
-		Given I have signed up for multiplayer
-		Then I should see "Make your choice Steph"
-
 	Scenario: Play again single
 		Given I have signed up for single player
 		When I follow "Rock"
 		When I follow "Retry"
 		Then I should see "Make your choice Steph"
-
-	Scenario: Play again multi

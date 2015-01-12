@@ -21,11 +21,6 @@ Given(/^I have signed up for single player$/) do
   step 'I follow "Single"'
 end
 
-Given(/^I have signed up for multiplayer$/) do
-  step 'I have entered my name'
-  step 'I follow "Multi"'
-end
-
 Given(/^I have entered my name$/) do
   step 'I am on the homepage'
   step 'I fill in "name" with "Steph"'
